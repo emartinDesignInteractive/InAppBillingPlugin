@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst;net8.0-macos</TargetFrameworks>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+    <TargetFrameworks>net9.0;net9.0-android;net9.0-ios;net9.0-maccatalyst;net9.0-macos</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
-    <UseMaui Condition="'$(TargetFramework)' != 'net8.0'">true</UseMaui>
-    <UseMauiEssentials Condition="'$(TargetFramework)' != 'net8.0'">true</UseMauiEssentials>
+    <UseMaui Condition="'$(TargetFramework)' != 'net9.0'">true</UseMaui>
+    <UseMauiEssentials Condition="'$(TargetFramework)' != 'net9.0'">true</UseMauiEssentials>
     <SingleProject>true</SingleProject>
     <AssemblyName>Plugin.InAppBilling</AssemblyName>
     <RootNamespace>Plugin.InAppBilling</RootNamespace>
@@ -95,7 +95,7 @@
 
   <ItemGroup Condition=" $(TargetFramework.Contains('-android')) ">
     <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
-    <PackageReference Include="Xamarin.Android.Google.BillingClient" Version="6.2.1" />
+    <PackageReference Include="Xamarin.Android.Google.BillingClient" Version="7.1.1.4" />
     <PackageReference Include="Xamarin.AndroidX.Activity">
       <Version>1.9.0.4</Version>
     </PackageReference>
@@ -160,7 +160,7 @@
   <ItemGroup Condition=" $(TargetFramework.Contains('-android')) ">
     <Compile Include="**\*.android.cs" />
     <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
-    <PackageReference Include="Xamarin.Android.Google.BillingClient" Version="6.2.1" />
+    <PackageReference Include="Xamarin.Android.Google.BillingClient" Version="7.1.1.4" />
     --><!--<PackageReference Include="Xamarin.Google.Guava.ListenableFuture" Version="1.0.0.19"/>--><!--
   </ItemGroup>
 
